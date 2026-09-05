@@ -5,6 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hridansh Mandaloju — Portfolio</title>
 <meta name="description" content="Portfolio of Hridansh Mandaloju, a sophomore at Loudoun Valley High School interested in software engineering, research, and building things.">
+
+<!-- Canonical URL — update this if the final domain differs -->
+<link rel="canonical" href="https://hridanshmandaloju.vercel.app/">
+
+<!-- Open Graph (Facebook, iMessage, Discord, LinkedIn, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hridansh Mandaloju — Portfolio">
+<meta property="og:description" content="Portfolio of Hridansh Mandaloju, a sophomore at Loudoun Valley High School interested in software engineering, research, and building things.">
+<meta property="og:url" content="https://hridanshmandaloju.vercel.app/">
+<meta property="og:image" content="https://hridanshmandaloju.vercel.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hridansh Mandaloju — Portfolio">
+<meta name="twitter:description" content="Portfolio of Hridansh Mandaloju, a sophomore at Loudoun Valley High School interested in software engineering, research, and building things.">
+<meta name="twitter:image" content="https://hridanshmandaloju.vercel.app/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hridansh Mandaloju",
+  "url": "https://hridanshmandaloju.vercel.app/",
+  "description": "Sophomore at Loudoun Valley High School interested in software engineering, research, and building things.",
+  "affiliation": {
+    "@type": "EducationalOrganization",
+    "name": "Loudoun Valley High School"
+  },
+  "sameAs": [
+    "https://github.com/ZStorm-7",
+    "https://www.youtube.com/@ZStormisreallycool"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -124,7 +166,6 @@
     text-decoration: none;
     letter-spacing: -0.01em;
   }
-  .nav-mark span { color: var(--accent); }
   .nav-links {
     display: flex;
     gap: 20px;
@@ -138,7 +179,7 @@
     font-size: 0.95rem;
     text-decoration: none;
     color: var(--muted);
-    text-transform: lowercase;
+    text-transform: capitalize;
     letter-spacing: 0.02em;
     transition: color 0.15s ease;
   }
@@ -708,6 +749,77 @@
     .contact-card--primary { grid-column: auto; }
   }
 
+  .contact-form {
+    margin-top: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .contact-form h3 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+  }
+  .contact-form p.form-sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 20px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
+  .form-field label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  .form-field input,
+  .form-field textarea {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    resize: vertical;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-submit {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    background: var(--ink);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .form-submit:hover { opacity: 0.85; }
+  .form-status {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 10px;
+    display: none;
+  }
+  @media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
   footer {
     padding: 40px 0 56px;
     display: flex;
@@ -732,7 +844,7 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-mark" href="#top">hridansh<span>.dev</span></a>
+    <a class="nav-mark" href="#top">hridansh</a>
     <ul class="nav-links">
       <li><a href="#about">about</a></li>
       <li><a href="#projects">projects</a></li>
@@ -923,6 +1035,27 @@
         </span>
       </a>
     </div>
+
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <h3>Send a message</h3>
+      <p class="form-sub">Prefer a form? Fill this out and it'll land straight in my inbox.</p>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required>
+        </div>
+        <div class="form-field full">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">Send message</button>
+      <p class="form-status" id="form-status"></p>
+    </form>
   </section>
 
   <footer>
@@ -934,5 +1067,38 @@
   </footer>
 
 </div>
+
+<script>
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          formStatus.textContent = "Thanks — your message has been sent. I'll get back to you soon.";
+          formStatus.style.display = 'block';
+          contactForm.reset();
+        } else {
+          formStatus.textContent = "Something went wrong. Please email me directly instead.";
+          formStatus.style.display = 'block';
+        }
+      } catch (err) {
+        formStatus.textContent = "Something went wrong. Please email me directly instead.";
+        formStatus.style.display = 'block';
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    });
+  }
+</script>
 </body>
 </html>
